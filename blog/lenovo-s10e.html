@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>fmb | Reviving the Lenovo S10e</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="../css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">fmb</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../list.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../projects.html">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../teaching.html">Teaching</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="../contact.html">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('../img/blog/s10e/s10e_flat.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Reviving the Lenovo S10e</h1>
+            <h2 class="subheading">A bios locked laptop that can only be unlocked by a government department that no longer exists</h2>
+            <span class="meta">Posted by
+              <a href="../list.html">Finbar Berkon</a>
+              on May 16, 2019</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+          <span class="caption text-muted">A quick preface: I am not promoting or condoning circumventing the terms of use of your device. These laptops were given to students to keep and use however they liked at the end of year 12 as long the students filled some paperwork and brought their laptop into the school during the holidays. I didn't do that, so I never got it unlocked officially, and now the department that could unlock it does not exist. The laptops are not given out anymore, so this guide will not help anyone who doesn't already own the laptop outright.</span>
+
+          <h2 class="section-heading">The Lenovo S10e</h2>
+
+          <p>The S10e is a subnotebook released by Lenovo in 2008. It was the laptop used in a short-lived government program to provide all Australian public school students with a computer which they could use both at home and at school. I was one of the 2009 year 9 cohort which received them.</p>
+
+          <p>I stumbled accross this relic again a few months ago and remembered how much I loved the thing. It is virtualy indestructible, has a replaceable battery(!!), manages to fit a surprisingly ergonomic keyboard and respectable IO into a very small form factor, and has a bold metallic-flake maroon finish.</p>
+
+          <p>Unfortunately, the computer has one major issue preventing me using it: it has a heavily restricted version of Windows 7 (which does not even boot anymore) installed and a BIOS supervisor password that I do not know.</p>
+
+          <p>With a 1.60 GHz single core Intel Atom CPU and 1GB of RAM, many would argue it is just not worth the hassle. And they would probably be right. But for 4 years this thing withstood daily computer abuse and still stubbornly refused to let me install anything or browse non-educational websites. I've got a soft spot, and a lot of respect, for this little laptop. And now perhaps I can give it a new lease on life, and finally get past its stubborn restrictions.</p>
+
+          <h2 class="section-heading">The BIOS problem</h2>
+
+          <p>Booting to the internal hard drive gives the 'Windows failed to start' screen. Safe mode is dissabled by the administrators, and the repair tool does nothing. Installing a fresh copy of Windows (or any other OS) would require changing the boot order, which is impossible without access to the BIOS. So my first approach is to try and remove the BIOS supervisor password.</p>
+
+
+          The main options I found for doing so are
+            <ul>
+              <li>resetting the BIOS password with a master password,</li>
+              <li>wiping the CMOS memory, or</li>
+              <li>reflashing the BIOS.</li>
+            </ul>
+
+          <p>Some manufacturers allow a master password to reset a BIOS password. This master password is obtained by hashing some code to produce the password. Usually, the code is either shown to the user upon three failed password attempts, or is some identifier unique to the computer like its serial number. Once you have it, you can put it through an online master password hashing algorithm to find the password. Unfortunately, three incorrect passwords just temporarily dissableda the system, and the neither the serial number nor any other number printed on the computer created a valid passoword. So, no hashed master password.</p>
+
+          <p>To reset the CMOS memory, one has to locate the CMOS battery and either remove it for 10-15 minutes, or find and short the reset pins. However, the BIOS password is not stored on the CMOS for most netbooks... including the S10e.s So, no removing the BIOS password via the CMOS.</p>
+
+          <p></p>
+
+          <h2 class="section-heading">The hardware solution</h2>
+
+          <p>para</p>
+
+          <h2 class="section-heading">Main sources</h2>
+
+          <ul>
+            <li><a href="https://superuser.com/questions/840809/reset-supervisor-password-on-lenovo-ideapad-s10e">A superuser forum post on the same topic</a></li>
+            <li><a href="http://www.tech-faq.com/reset-bios-password.html">Info about BIOS master passwords</a></li>
+            <li><a href="https://bios-pw.org">BIOS hashing algorithm</a></li>
+            <li><a href="https://www.biosflash.com/e/bios-cmos-reset.htm">Info about the CMOS battery and memory</a></li>
+            <li><a href="https://www.techrepublic.com/blog/10-things/10-common-mistakes-you-should-avoid-when-flashing-your-bios/">Info about BIOS flashing</a></li>
+            <li><a href="http://tim.id.au/laptops/lenovo/ideapad%20s9e%20s10%20s10e.pdf">Lenovo S10e hardware manual</a></li>
+            <li><a href="https://www.youtube.com/watch?v=5x1sYtpN0xQ">Dissassembly walkthrough</a></li>
+          </p>
+          <!-- <blockquote class="blockquote">quote</blockquote> -->
+          <!-- <span class="caption text-muted">muted</span> -->
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Your Website 2019</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
