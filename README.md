@@ -1,6 +1,6 @@
 This is the repository for my website [fmb.dev](https://fmb.dev) which is hosted on GitHub Pages.
 
-My website uses the Clean Blog template by Start Bootstrap. Their copyright notice is below.
+My website uses the [Clean Blog](https://startbootstrap.com/themes/clean-blog/) template by [Start Bootstrap](https://startbootstrap.com). Their copyright notice is below.
 
 ## Copyright and License
 
