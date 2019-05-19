@@ -89,7 +89,7 @@
 
           <p>Unfortunately, the computer has one major issue preventing me using it: it has a heavily restricted version of Windows 7 (which does not even boot anymore) installed and a BIOS supervisor password that I do not know.</p>
 
-          <p>With a 1.60 GHz single core Intel Atom CPU and 1GB of RAM, many would argue it is just not worth the hassle. And they would probably be right. But for 4 years this thing withstood daily computer abuse and still stubbornly refused to let me install anything or browse non-educational websites. I've got a soft spot, and a lot of respect, for this little laptop. And now perhaps I can give it a new lease on life, and finally get past its stubborn restrictions.</p>
+          <p>With a 1.60 GHz single core Intel Atom CPU and 1GB of RAM, many would argue it is just not worth the hassle. And they would probably be right. But for 4 years this thing withstood daily computer abuse and still stubbornly refused to let me install anything or play any of my favourite flash games. I've got a soft spot, and a lot of respect, for this little laptop. And now perhaps I can give it a new lease on life, and finally get past its stubborn restrictions.</p>
 
           <h2 class="section-heading">The BIOS problem</h2>
 
@@ -103,15 +103,28 @@
               <li>reflashing the BIOS.</li>
             </ul>
 
-          <p>Some manufacturers allow a master password to reset a BIOS password. This master password is obtained by hashing some code to produce the password. Usually, the code is either shown to the user upon three failed password attempts, or is some identifier unique to the computer like its serial number. Once you have it, you can put it through an online master password hashing algorithm to find the password. Unfortunately, three incorrect passwords just temporarily dissableda the system, and the neither the serial number nor any other number printed on the computer created a valid passoword. So, no hashed master password.</p>
+          <p>Some manufacturers allow a master password to reset a BIOS password. This master password is obtained by hashing some code to produce the password. Usually, the code is either shown to the user upon three failed password attempts, or is some identifier unique to the computer like its serial number. Once you have it, you can put it through an online master password hashing algorithm to find the password. Unfortunately, three incorrect passwords just temporarily dissabled the system, and the neither the serial number nor any other number printed on the computer created a valid passoword. So, no hashed master password that I could find.</p>
 
-          <p>To reset the CMOS memory, one has to locate the CMOS battery and either remove it for 10-15 minutes, or find and short the reset pins. However, the BIOS password is not stored on the CMOS for most netbooks... including the S10e.s So, no removing the BIOS password via the CMOS.</p>
+          <p>To reset the CMOS memory, one has to locate the CMOS battery and either remove it for 10-15 minutes, or find and short the reset pins, or maybe both depending on your hardware. However, most subnotebooks, and netbooks generally, store the BIOS password on some hidden integrated circuit as an added measure of security for such portable devices. This proved true for the S10e, so no removing the BIOS password via the CMOS.</p>
 
-          <p></p>
+          <p>Finally, there was the option of reflashing the BIOS. I was alreayd feeling very out of my depth by this point, and a quick read of Alan Norton's <a href="https://www.techrepublic.com/blog/10-things/10-common-mistakes-you-should-avoid-when-flashing-your-bios/">article</a> (along with a mental tally of each of the little mistakes I'd made so far in this project) was enough to persuade me that I was nowhere near qualified to try this. A single small mistake, and I would have a newly fried motherboard rather than a potentially salvageable computer. I did have a look for viable BIOS firmware, but there were none I was sure enough about. I didn't manage to get rid of the BIOS password, this was as far as I got.</p>
+
+          <p>But in taking apart and reassembling the laptop to remove the CMOS battery, I had noticed what might be a pretty significant flaw in the laptop's thus far formidable security: its hard drive.</p>
 
           <h2 class="section-heading">The hardware solution</h2>
 
-          <p>para</p>
+          <p>The hard drive actually slips out of its enclosure very easily once you find your way past a bit of tape threatening very serious high school trouble if tampered with and a couple of torx security screws. I was pretty worried there would be some kind of check on boot that the hard drive hadn't been swapped out, or even that the OS installation matched some preset value. Without being able to do much about the second problem, I decided to try and install a different OS on the hard drive and see if it would boot.</p>
+
+          <p></p>
+
+          <p>I took the hard drive out, connected it up to my MacBook with a SATA to USB-C adapter, and used <a href="https://www.balena.io/etcher/">balenaEtcher</a> to install a minimal Ubunto installer image on the drive. I plugged it back into the S10e, and lo and behold, it booted!</p>
+
+          <p>The rest of the installation process was simple, and a bit anticlimactic. After a small problem with Linux partitions, the Lenovo S10e is living its brand new life as a CLI only Ubuntu laptop (that I actually spend a silly amount of time on).</p>
+
+          <img class="img-fluid" src="../img/blog/s10e/s10e_finished.jpg" alt="">
+          <span class="caption text-muted">Lenovo S10e running CLI Ubuntu.</span>
+
+          <p>After all that, the laptop's strongest security feature was some sticky tape with a few scary words written on it.</p>
 
           <h2 class="section-heading">Main sources</h2>
 
@@ -120,9 +133,9 @@
             <li><a href="http://www.tech-faq.com/reset-bios-password.html">Info about BIOS master passwords</a></li>
             <li><a href="https://bios-pw.org">BIOS hashing algorithm</a></li>
             <li><a href="https://www.biosflash.com/e/bios-cmos-reset.htm">Info about the CMOS battery and memory</a></li>
-            <li><a href="https://www.techrepublic.com/blog/10-things/10-common-mistakes-you-should-avoid-when-flashing-your-bios/">Info about BIOS flashing</a></li>
             <li><a href="http://tim.id.au/laptops/lenovo/ideapad%20s9e%20s10%20s10e.pdf">Lenovo S10e hardware manual</a></li>
             <li><a href="https://www.youtube.com/watch?v=5x1sYtpN0xQ">Dissassembly walkthrough</a></li>
+            <li><a href="https://www.techrepublic.com/blog/10-things/10-common-mistakes-you-should-avoid-when-flashing-your-bios/">Info about BIOS flashing</a></li>
           </p>
           <!-- <blockquote class="blockquote">quote</blockquote> -->
           <!-- <span class="caption text-muted">muted</span> -->
@@ -138,32 +151,6 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <ul class="list-inline text-center">
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-          </ul>
           <p class="copyright text-muted">Copyright &copy; Finbar Berkon 2019</p>
         </div>
       </div>
