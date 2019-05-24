@@ -85,7 +85,7 @@
 
           <p>The S10e is a subnotebook released by Lenovo in 2008. It was the laptop used in a short-lived government program to provide all Australian public school students with a computer which they could use both at home and at school. I was one of the 2009 year 9 cohort which received them.</p>
 
-          <p>I stumbled accross this relic again a few months ago and remembered how much I loved the thing. It is virtualy indestructible, has a replaceable battery(!!), manages to fit a surprisingly ergonomic keyboard and respectable IO into a very small form factor, and has a bold metallic-flake maroon finish.</p>
+          <p>I stumbled across this relic again a few months ago and remembered how much I loved the thing. It is virtually indestructible, has a replaceable battery(!!), manages to fit a surprisingly ergonomic keyboard and respectable IO into a very small form factor, and has a bold metallic-flake maroon finish.</p>
 
           <p>Unfortunately, the computer has one major issue preventing me using it: it has a heavily restricted version of Windows 7 (which does not even boot anymore) installed and a BIOS supervisor password that I do not know.</p>
 
@@ -93,21 +93,21 @@
 
           <h2 class="section-heading">The BIOS problem</h2>
 
-          <p>Booting to the internal hard drive gives the 'Windows failed to start' screen. Safe mode is disabled by the administrators, and the repair tool does nothing. Installing a fresh copy of Windows (or any other OS) would require changing the boot order, which is impossible without access to the BIOS. So my first approach is to try and remove the BIOS supervisor password.</p>
+          <p>Booting to the internal hard drive gives the 'Windows failed to start' screen. Safe mode is disabled by the administrators, and the repair tool does nothing. Installing a fresh copy of Windows (or any other OS) would require changing the boot order, which is impossible without access to the BIOS. So, my first approach is to try and remove the BIOS supervisor password.</p>
 
 
           The main options I found for doing so are
             <ul>
               <li>resetting the BIOS password with a master password,</li>
               <li>wiping the CMOS memory, or</li>
-              <li>reflashing the BIOS.</li>
+              <li>re-flashing the BIOS.</li>
             </ul>
 
-          <p>Some manufacturers allow a master password to reset a BIOS password. This master password is obtained by hashing some code to produce the password. Usually, the code is either shown to the user upon three failed password attempts, or is some identifier unique to the computer like its serial number. Once you have it, you can put it through an online master password hashing algorithm to find the password. Unfortunately, three incorrect passwords just temporarily disabled the system, and the neither the serial number nor any other number printed on the computer created a valid password. So, no hashed master password that I could find.</p>
+          <p>Some manufacturers allow a master password to reset a supervisor password on the BIOS. This master password is obtained by hashing some code to produce the password. Usually, the code is either shown to the user upon three failed password attempts, or is some identifier unique to the computer like its serial number. Once you have it, you can put it through an online master password hashing algorithm to find the password. Unfortunately, three incorrect passwords just temporarily disabled the system, and neither the serial number nor any other number printed on the computer created a valid password. So, no hashed master password that I could find.</p>
 
           <p>To reset the CMOS memory, one has to locate the CMOS battery and either remove it for 10-15 minutes, or find and short the reset pins, or maybe both depending on your hardware. However, most subnotebooks, and netbooks generally, store the BIOS password on some hidden integrated circuit as an added measure of security for such portable devices. This proved true for the S10e, so no removing the BIOS password via the CMOS.</p>
 
-          <p>Finally, there was the option of reflashing the BIOS. I was alreayd feeling very out of my depth by this point, and a quick read of Alan Norton's <a href="https://www.techrepublic.com/blog/10-things/10-common-mistakes-you-should-avoid-when-flashing-your-bios/">article</a> (along with a mental tally of each of the little mistakes I'd made so far in this project) was enough to persuade me that I was nowhere near qualified to try this. A single small mistake, and I would have a newly fried motherboard rather than a potentially salvageable computer. I did have a look for viable BIOS firmware, but there were none I was sure enough about. I didn't manage to get rid of the BIOS password, this was as far as I got.</p>
+          <p>Finally, there was the option of re-flashing the BIOS. I was already feeling very out of my depth by this point, and a quick read of Alan Norton's <a href="https://www.techrepublic.com/blog/10-things/10-common-mistakes-you-should-avoid-when-flashing-your-bios/">article</a> (along with a mental tally of each of the little mistakes I'd made so far in this project) was enough to persuade me that I was nowhere near qualified to try this. A single small mistake, and I would have a newly fried motherboard rather than a potentially salvageable computer. I did have a look for viable BIOS firmware, but there were none I was sure enough about. I didn't manage to get rid of the BIOS password, this was as far as I got.</p>
 
           <p>But in taking apart and reassembling the laptop to remove the CMOS battery, I had noticed what might be a pretty significant flaw in the laptop's thus far formidable security: its hard drive.</p>
 
@@ -117,7 +117,7 @@
 
           <p></p>
 
-          <p>I took the hard drive out, connected it up to my MacBook with a SATA to USB-C adapter, and used <a href="https://www.balena.io/etcher/">balenaEtcher</a> to install a minimal Ubunto installer image on the drive. I plugged it back into the S10e, and lo and behold, it booted!</p>
+          <p>I took the hard drive out, connected it up to my MacBook with a SATA to USB-C adapter, and used <a href="https://www.balena.io/etcher/">balenaEtcher</a> to install a minimal Ubuntu installer image on the drive. I plugged it back into the S10e, and lo and behold, it booted!</p>
 
           <p>The rest of the installation process was simple, and a bit anticlimactic. After a small problem with Linux partitions, the Lenovo S10e is living its brand new life as a CLI (Command Line Interface) only Ubuntu laptop that I actually spend a silly amount of time on.</p>
 
