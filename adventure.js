@@ -39,7 +39,7 @@ let key = {};
 document.addEventListener('keydown', (event) => {
    event.preventDefault(); // prevent arrow keys scrolling page
    key[event.key] = true;
-   toggle_sprint();   
+   toggle_sprint();
 })
 
 document.addEventListener('keyup', (event) => {
@@ -52,25 +52,25 @@ document.addEventListener('scroll', (event) => {
 })
 
 function move() {
-   if (key["ArrowLeft"]) {
+   if (key.ArrowLeft || key.h) {
       let new_position = (parseInt(player.style.left) - speed);
       (new_position < MIN_X) && (new_position = MIN_X);
       player.style.left = new_position + "px";
    }
 
-   if (key["ArrowRight"]) {
+   if (key.ArrowRight || key.l) {
       let new_position = (parseInt(player.style.left) + speed);
       (new_position > MAX_X) && (new_position = MAX_X);
       player.style.left = new_position + "px";
    }
 
-   if (key["ArrowUp"]) {
+   if (key.ArrowUp || key.k) {
       let new_position = (parseInt(player.style.top) - speed);
       (new_position < MIN_Y) && (new_position = MIN_Y);
       player.style.top = new_position + "px";
    }
 
-   if (key["ArrowDown"]) {
+   if (key.ArrowDown || key.j) {
       let new_position = (parseInt(player.style.top) + speed);
       (new_position > MAX_Y) && (new_position = MAX_Y);
       player.style.top = new_position + "px";
@@ -78,7 +78,7 @@ function move() {
 }
 
 function shoot() {
-   if (key["x"]) {
+   if (key.x) {
       const fireball = document.createElement('fireball');
       fireball.id = "fireball";
       fireball.style.left = (parseInt(player.style.left) + 40) + "px";
