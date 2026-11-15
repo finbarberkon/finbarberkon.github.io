@@ -1,1 +1,1 @@
-Go to [fmb.dev](https://fmb.dev) to play a little ghost game :)
+Go to [finbar.dev](https://finbar.dev) to play a little ghost game :)
